@@ -1,30 +1,30 @@
+const { createApp, ref, reactive } = Vue;
+
 const app = Vue.createApp({
-  data() {
-    return {
-      error: false,
-      data: { shoes: null },
-    };
-  },
-  created: () => {
+  setup() {
+    let shoes = reactive([]);
+    let error = ref(false);
+
     axios
       .get('https://shop.cyberlearn.vn//api/Product')
       .then((res) => {
         const data = res.data;
-        console.log(data);
         if (data.statusCode !== 200) {
-          this.error = true;
+          error.value = true;
         } else {
-          this.data.shoes = res.content;
+          shoes.value = data.content;
+          console.log(data.content);
         }
-        console.log(this.data.shoes);
       })
       .catch((err) => {
-        this.error = true;
+        error.value = true;
       });
+
+    return {
+      error,
+      shoes,
+    };
   },
-  computed: {},
-  watch: {},
-  methods: {},
 });
 
 app.mount('#shoes');

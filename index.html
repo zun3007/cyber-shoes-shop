@@ -8,17 +8,129 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/styles/styles.css" />
   </head>
-  <body>
-    <!-- Herosection -->
-    <!-- Navbar -->
+  <body hx-boost="true">
+    <div class="container">
+      <!-- Herosection -->
+      <!-- Navbar -->
+      <nav class="navbar">
+        <!-- Auth and Logo section -->
+        <ul class="auth--nav">
+          <li class="logo">
+            <a href="/index.html"
+              ><img
+                width="128px"
+                height="32px"
+                src="/assets/images/cybersoft.png"
+                alt="Cybersoft Logo"
+            /></a>
+          </li>
+          <li class="auth">
+            <img src="/assets/images/cart.svg" alt="Cart Icon" />
+            <a href="#">Login</a>
+            <a href="/pages/register.html">Register</a>
+          </li>
+        </ul>
 
-    <!-- Carousel -->
+        <!-- Pagination section -->
+        <ul class="pagination">
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Woman</a></li>
+          <li><a href="#">Kid</a></li>
+        </ul>
+      </nav>
 
-    <!-- Feature -->
-    <main id="feature">
-      <div id="shoes"></div>
-    </main>
+      <!-- Carousel -->
+      <div class="carousel">
+        <img
+          width="820px"
+          height="400px"
+          src="assets/images/carousel-shoes.png"
+          alt="Carousel Shoe"
+        />
+        <div class="heading">
+          <h1>Product name</h1>
+          <p>Product description...</p>
+          <button>Buy now</button>
+        </div>
 
+        <button class="left">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icons"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+        </button>
+
+        <button class="right">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icons"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
+          </svg>
+        </button>
+      </div>
+      <!-- Feature -->
+      <main class="feature">
+        <h1 class="feature--header">- Product Feature -</h1>
+        <ul id="shoes" class="shoes">
+          <li
+            v-for="item in shoes.value"
+            :key="item.id"
+            :class="{ 'shoes--item': true, hidden: item.deleted }"
+          >
+            <div class="shoes--img">
+              <img
+                width="220px"
+                height="156px"
+                :src="item.image"
+                :alt="item.name"
+              />
+            </div>
+            <div class="description">
+              <p class="shoes--name">{{item.name}}</p>
+              <p class="shoes--desc">
+                {{item.description.slice(0, 20) + '...'}}
+              </p>
+            </div>
+            <div class="price--box">
+              <button class="order">Buy now</button>
+              <div class="price">
+                <p>{{ item.price }}$</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </main>
+
+      <!-- Footer -->
+      <img
+        class="footer"
+        width="1280px"
+        src="/assets/images/footer.png"
+        alt="footer.png"
+      />
+    </div>
+
+    <!-- CDN Javacript Section -->
     <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
