@@ -99,12 +99,13 @@
             :class="{ 'shoes--item': true, hidden: item.deleted }"
           >
             <div class="shoes--img">
-              <img
-                width="220px"
-                height="156px"
-                :src="item.image"
-                :alt="item.name"
-              />
+              <a :href="`http://127.0.0.1:5500/pages/detail.html?id=${item.id}`"
+                ><img
+                  width="220px"
+                  height="156px"
+                  :src="item.image"
+                  :alt="item.name"
+              /></a>
             </div>
             <div class="description">
               <p class="shoes--name">{{item.name}}</p>
