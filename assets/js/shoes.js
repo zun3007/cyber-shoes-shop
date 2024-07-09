@@ -1,6 +1,6 @@
 const { createApp, ref, reactive } = Vue;
 
-const app = Vue.createApp({
+const shoesApp = Vue.createApp({
   setup() {
     let shoes = reactive([]);
     let error = ref(false);
@@ -13,7 +13,7 @@ const app = Vue.createApp({
           error.value = true;
         } else {
           shoes.value = data.content;
-          console.log(data.content);
+          // console.log(data.content);
         }
       })
       .catch((err) => {
@@ -27,4 +27,4 @@ const app = Vue.createApp({
   },
 });
 
-app.mount('#shoes');
+shoesApp.mount('#shoes');

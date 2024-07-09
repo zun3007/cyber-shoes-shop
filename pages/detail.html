@@ -3,18 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detail</title>
+    <title>Cyber Shoes Shop</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/styles/styles.css" />
   </head>
-  <body hx-boost="true">
+  <body>
+    <div id="shoesDetail" class="container">
+      <!-- Herosection -->
+      <!-- Navbar -->
+      <nav class="navbar">
+        <!-- Auth and Logo section -->
+        <ul class="auth--nav">
+          <li class="logo">
+            <a href="/index.html"
+              ><img
+                width="128px"
+                height="32px"
+                src="../assets/images/cybersoft.png"
+                alt="Cybersoft Logo"
+            /></a>
+          </li>
+          <li class="auth">
+            <img src="/assets/images/cart.svg" alt="Cart Icon" />
+            <a href="#">Login</a>
+            <a href="/pages/register.html">Register</a>
+          </li>
+        </ul>
+
+        <!-- Pagination section -->
+        <ul class="pagination">
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Woman</a></li>
+          <li><a href="#">Kid</a></li>
+          <li><a href="#">Sport</a></li>
+        </ul>
+      </nav>
+
+      <!-- Detail -->
+      <div class="detail">
+        <div class="detail--img">
+          <img
+            width="334px"
+            height="355px"
+            :src="shoesDetail.image"
+            :alt="shoesDetail.name"
+          />
+        </div>
+
+        <div class="detail--container">
+          <h1>{{ shoesDetail.name }}</h1>
+          <p>{{ shoesDetail.description}}</p>
+          <h2>Available size</h2>
+          <ul class="detail--size">
+            <li v-for="item in shoesDetail.size">
+              <button>{{item}}</button>
+            </li>
+          </ul>
+          <p class="detail--price">{{shoesDetail.price}}$</p>
+          <div class="detail--quantity">
+            <button class="btn">+</button>
+            <p class="quantity">1</p>
+            <button class="btn">-</button>
+          </div>
+          <button class="add-to-cart">Add to cart</button>
+        </div>
+      </div>
+      <!-- Feature -->
+      <main class="feature">
+        <h1 class="feature--header">- Product Feature -</h1>
+        <ul id="shoes" class="shoes">
+          <li
+            v-for="item in shoesDetail.relatedProducts"
+            :key="item.id"
+            :class="{ 'shoes--item': true, hidden: item.deleted
+            }"
+          >
+            <div class="shoes--img">
+              <img
+                width="220px"
+                height="156px"
+                :src="item.image"
+                :alt="item.name"
+              />
+            </div>
+            <div class="description">
+              <p class="shoes--name">{{item.name}}</p>
+              <p class="shoes--desc">
+                {{item.description.slice(0, 20) + '...'}}
+              </p>
+            </div>
+            <div class="price--box">
+              <button class="order">Buy now</button>
+              <div class="price">
+                <p>{{ item.price }}$</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </main>
+
+      <!-- Footer -->
+      <img
+        class="footer"
+        width="1280px"
+        src="/assets/images/footer.png"
+        alt="footer.png"
+      />
+    </div>
+
     <!-- CDN Javacript Section -->
-    <!-- HTMX -->
-    <script
-      src="https://unpkg.com/htmx.org@2.0.0"
-      integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Script -->
+    <script src="/assets/js/shoesDetail.js"></script>
   </body>
 </html>
