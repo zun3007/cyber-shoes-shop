@@ -81,12 +81,13 @@
             }"
           >
             <div class="shoes--img">
-              <img
-                width="220px"
-                height="156px"
-                :src="item.image"
-                :alt="item.name"
-              />
+              <a :href="`/pages/detail.html?id=${item.id}`"
+                ><img
+                  width="220px"
+                  height="156px"
+                  :src="item.image"
+                  :alt="item.name"
+              /></a>
             </div>
             <div class="description">
               <p class="shoes--name">{{item.name}}</p>
