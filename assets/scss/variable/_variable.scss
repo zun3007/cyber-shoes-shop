@@ -1,0 +1,157 @@
+// Màu sắc web
+$primary-300:#2a73dd;
+$primary-200:#2196f3;
+$primary-100: #f5f9fe;
+$light:#fff;
+$dark:#000;
+$white:#fff;
+$warning-100:rgb(246, 239, 112);
+$warning-200:rgb(247, 236, 44);
+$warning-300:rgb(247, 235, 7);
+
+// Màu chữ (text-color)
+$text-primary-300:$primary-300;
+$text-primary-200:$primary-200;
+$text-primary-100:$primary-100;
+$text-dark:$dark;
+$text-light:$light;
+$text-white:$white;
+$text-warning-100: $warning-100;
+$text-warning-200: $warning-200;
+$text-warning-300: $warning-300;
+
+
+// Màu backgroud
+$bg-primary-300:$primary-300;
+$bg-primary-200:$primary-200;
+$bg-primary-100:$primary-100;
+$bg-dark:$dark;
+$bg-light:$light;
+$bg-white:$white;
+$bg-warning-100: $warning-100;
+$bg-warning-200: $warning-200;
+$bg-warning-300: $warning-300;
+
+// sizing (font-size)
+$text-base:16px;
+$text-xl:18px;
+$text-2xl:20px;
+$text-3xl:30px;
+$text-4xl:40px;
+$text-5xl:50px;
+$text-6xl:50px;
+$text-7xl:70px;
+
+$fw-light:300;
+$fw-normal:400;
+$fw-semi:600;
+$fw-bold:700;
+
+// margin- padding
+$m-0:0;
+$m-1:0.25rem;
+$m-2:0.5rem;
+$m-3:0.75rem;
+$m-4:1rem;
+$m-5:1.25rem;
+$m-6:1.5rem;
+$m-7:1.75rem;
+$m-8:2rem;
+$m-9:2.25rem;
+
+$p-0:0;
+$p-1:0.25rem;
+$p-2:0.5rem;
+$p-3:0.75rem;
+$p-4:1rem;
+$p-5:1.25rem;
+$p-6:1.5rem;
+$p-7:1.75rem;
+$p-8:2rem;
+$p-9:2.25rem;
+
+// mixin: tương tự tuy nhiên không có xử lý retunr
+
+@mixin mTest($fs:$text-base,$c:$text-dark,$fw:$fw-normal) { //default params (giá trị mặc định)
+    font-size: $fs;
+    color: $c;
+    font-weight: $fw;
+}
+
+@mixin mButton ($fs,$fw,$c,$bg,$p,$bd,$br,$bg-hover,$c-hover) {
+    @include mTest($fs,$c,$fw);
+    background: $bg;
+    padding: $p;
+    border: $bd;
+    border-radius: $br;
+    transition: .5s;
+    cursor: pointer;
+    &:hover {
+        color: $c-hover;
+        background: $bg-hover;
+    }
+}
+
+//Tạo ra các class margin và paddding
+$lst-size: 0rem, 0.25rem, 0.75rem, 1rem, 1.25rem, 1.5rem; //List đơn giá trị
+$i: 0;
+
+@each $size in $lst-size {
+    .m-#{$i}{
+        margin: $size; 
+    }
+    .p-#{$i}{
+        padding: $size;
+    }
+    .mt-#{$i} {
+        margin-top: $size;
+    }
+    .mb-#{$i} {
+        margin-bottom: $size;
+    }
+    .ms-#{$i} {
+        margin-left: $size;
+    }
+
+    .me-#{$i} {
+        margin-right: $size;
+    }
+
+    .mx-#{$i} {
+        margin-left: $size;
+        margin-right: $size;
+    }
+
+    .my-#{$i} {
+        margin-top: $size;
+        margin-bottom: $size;
+    }
+
+
+    //padding
+    .pt-#{$i} {
+        padding-top: $size;
+    }
+    .pb-#{$i} {
+        padding-bottom: $size;
+    }
+    .ps-#{$i} {
+        padding-left: $size;
+    }
+
+    .pe-#{$i} {
+        padding-right: $size;
+    }
+
+    .px-#{$i} {
+        padding-left: $size;
+        padding-right: $size;
+    }
+
+    .py-#{$i} {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+
+    $i: $i+1;
+}
