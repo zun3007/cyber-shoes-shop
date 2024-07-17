@@ -1,97 +1,65 @@
-export function kiemTraRong(value,selectorError,name) {
-    //   abc    .trim() => abc
-    if(value.trim() === '') {
-        document.querySelector(selectorError).innerHTML = `${name} không được bỏ trống !`;
+function kiemTraEmail(email) {
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailPattern.test(email)) {
+        alert('Email không được để trống và phải đúng định dạng.');
         return false;
     }
-    document.querySelector(selectorError).innerHTML = '';
     return true;
 }
 
-export function kiemTraSo(value,selectorError,name) {
-    let regexNumber = /^[0-9]+$/;
-    if(regexNumber.test(value)) {
-        document.querySelector(selectorError).innerHTML = '';
-        return true;
-    }
-
-    document.querySelector(selectorError).innerHTML = `${name} không phải số !`;
-    return false;
-}
-
-export function kiemTraEmail(value,selectorError,name) {
-    let regexEmail = /^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/;
-    if(regexEmail.test(value)) {
-        document.querySelector(selectorError).innerHTML = '';
-        return true;
-    }
-
-    document.querySelector(selectorError).innerHTML = `${name} không hợp lệ !`;
-    return false;
-}
-
-export function kiemTraSoDienThoai(value,selectorError,name) {
-    let regexPhone = /^0[3|5|7|8|9][0-9]{8}$/;
-    if(regexPhone.test(value)) {
-        document.querySelector(selectorError).innerHTML = '';
-        return true;
-    }
-
-    document.querySelector(selectorError).innerHTML = `${name} không hợp lệ !`;
-    return false;
-}
-
-export function kiemTraHoTen(value,selectorError,name) {
-    let regexName = /^([A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơỲỴÝỳỵỷỹĂăẠ-ỹ]+(\s[A-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơỲỴÝỳỵỷỹĂăẠ-ỹ]+)*)$/ig;
-    if(regexName.test(value)) {
-        document.querySelector(selectorError).innerHTML = '';
-        return true;
-    }
-
-    document.querySelector(selectorError).innerHTML = `${name} không hợp lệ !`;
-    return false;
-}
-
-export function kiemTraDoDai(value,selectorError,name,min,max) {
-    let length = value.length;
-    if(length > max || length < min) {
-        document.querySelector(selectorError).innerHTML = `${name} từ ${min} - ${max} ký tự !`;
+function kiemTraTen(name) {
+    if (!name || !name.match(/^[\p{L}\s]+$/u)) {
+        alert('Tên nhân viên không được để trống và chỉ được chứa chữ cái và khoảng trắng.');
         return false;
     }
-    document.querySelector(selectorError).innerHTML = ``;
-    return true;
-} 
-
-export function kiemTraGiaTri(value,selectorError,name,min,max) {
-    let number = +value;
-    if(number < min || number > max) {
-        document.querySelector(selectorError).innerHTML = `${name} từ ${min} - ${max} ký tự !`
-        return false
-    }
-
-    document.querySelector(selectorError).innerHTML = '';
     return true;
 }
 
-export function kiemTraPassword(value, selectorError, name) {
-    // Có thể thêm các điều kiện kiểm tra mật khẩu ở đây, ví dụ độ dài tối thiểu, ký tự đặc biệt, ...
-    if (value.trim() === '') {
-        document.querySelector(selectorError).innerHTML = `${name} không được bỏ trống !`;
+function kiemTraMatKhau(password) {
+    let passwordPattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{6,10})/;
+    if (!password || !passwordPattern.test(password)) {
+        alert('Mật khẩu không được để trống và phải từ 6 đến 10 ký tự (bao gồm ít nhất 1 số, 1 chữ cái viết hoa và 1 ký tự đặc biệt).');
         return false;
     }
-    document.querySelector(selectorError).innerHTML = '';
     return true;
 }
 
-export function kiemTraXacNhanPassword(password, confirmPassword, selectorError, name) {
+function kiemTraXacNhanPassword(password, confirmPassword) {
     if (confirmPassword.trim() === '') {
-        document.querySelector(selectorError).innerHTML = `Xác nhận ${name} không được bỏ trống !`;
-        return false;
+        return `Xác nhận mật khẩu không được bỏ trống !`;
     }
     if (password !== confirmPassword) {
-        document.querySelector(selectorError).innerHTML = `Xác nhận ${name} không khớp !`;
+        return `Xác nhận mật khẩu không khớp với mật khẩu đã nhập !`;
+    }
+    
+    let passwordPattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{6,10})/;
+    if (!passwordPattern.test(confirmPassword)) {
+        return `Xác nhận mật khẩu không hợp lệ ! Yêu cầu từ 6 đến 10 ký tự (bao gồm ít nhất 1 số, 1 chữ cái viết hoa và 1 ký tự đặc biệt).`;
+    }
+    
+    return ''; // Trả về chuỗi rỗng nếu không có lỗi
+}
+
+function kiemTraSoDT(phone) {
+    // Regex cho số điện thoại Việt Nam bắt đầu bằng số 0, tiếp theo là 9 chữ số
+    let phonePattern = /^0[0-9]{9}$/;
+    
+    if (!phone || !phonePattern.test(phone)) {
+        alert('Số điện thoại không hợp lệ. Vui lòng nhập lại.');
         return false;
     }
-    document.querySelector(selectorError).innerHTML = '';
+    
     return true;
+}
+
+export function kiemTraNhapThongTin(khachHangMoi) {
+    let { email, name, password, confirmPassword, phone} = khachHangMoi;
+
+    if (!kiemTraEmail(email)) return false;
+    if (!kiemTraTen(name)) return false;
+    if (!kiemTraMatKhau(password)) return false;
+    if (!kiemTraXacNhanPassword(password, confirmPassword)) return false;
+    if (!kiemTraSoDT(phone)) return false;
+
+    return true; // Trả về true nếu dữ liệu nhập vào hợp lệ
 }
