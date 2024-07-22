@@ -192,6 +192,75 @@ a {
   font-size: 24px;
   background-color: #cbd5e1;
 }
+.container .detail {
+  display: flex;
+  margin-top: 64px;
+  margin-left: 64px;
+}
+.container .detail .detail--img {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 40%;
+}
+.container .detail .detail--container {
+  width: 40%;
+}
+.container .detail .detail--container h1 {
+  font-size: 44px;
+  font-weight: 200;
+  margin-bottom: 18px;
+}
+.container .detail .detail--container h2 {
+  color: #1ed90e;
+  margin: 24px auto;
+}
+.container .detail .detail--container .detail--size {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+.container .detail .detail--container .detail--size button {
+  width: 50px;
+  height: 50px;
+  font-weight: 500;
+  background-color: #cbd5e1;
+  font-size: 24px;
+  border: none;
+}
+.container .detail .detail--price {
+  font-size: 44px;
+  color: orangered;
+  margin-bottom: 20px;
+}
+.container .detail .detail--quantity {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.container .detail .detail--quantity .btn {
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: cornflowerblue;
+  justify-content: center;
+  align-content: center;
+  color: white;
+  border: none;
+}
+.container .detail .detail--quantity .quantity {
+  font-size: 30px;
+}
+.container .detail .add-to-cart {
+  background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #d017ee 89.71%);
+  color: white;
+  border: none;
+  width: 175px;
+  height: 64px;
+  font-size: 24px;
+  margin-top: 8px;
+}
 .container .footer {
   margin-top: 128px;
 }/*# sourceMappingURL=styles.css.map */

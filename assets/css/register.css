@@ -801,4 +801,7 @@ form {
 
 .carousel {
   text-align: center;
+}
+.carousel .container .row .col-md-6 .card {
+  border: none;
 }/*# sourceMappingURL=register.css.map */
