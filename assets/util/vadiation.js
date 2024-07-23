@@ -49,7 +49,7 @@ function kiemTraSoDT(phone) {
     let phonePattern = /^0[0-9]{9}$/;
 
     if (!phone || !phonePattern.test(phone)) {
-        alert('Số điện thoại không hợp lệ. Vui lòng nhập lại.');
+        alert('Số điện thoại không hợp lệ. Vui lòng nhập lại số điện thoại Việt Nam bắt đầu từ 0 và dài 10 hoặc 11 chữ số.');
         return false;
     }
 

@@ -398,8 +398,9 @@ form {
   justify-content: space-around;
   text-align: center;
 }
-.gender .form-label {
-  margin: 0;
+.gender .form-check .form-check-input:checked {
+  background-color: #c445ff;
+  color: #fff;
 }
 
 .m-0 {
@@ -804,4 +805,30 @@ form {
 }
 .carousel .container .row .col-md-6 .card {
   border: none;
+}
+.carousel .container .row .col-md-6 .card .card-body form .row .col-md-6 .form-control {
+  border-bottom: 2px solid #c445ff;
+}
+.carousel .container .row .col-md-6 .card .card-body form .row .col-md-6 .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+.carousel .container .row .col-md-6 .card .card-body form .text-center {
+  margin-top: 30px;
+}
+.carousel .container .row .col-md-6 .card .card-body form .text-center button {
+  padding: 7px 40px;
+  background-color: #c445ff;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.carousel .container .row .col-md-6 .card .card-body form .text-center button:hover {
+  background-color: #a837d4;
+}
+.carousel .container .row .col-md-6 .card .card-body form .text-center button:focus {
+  outline: none;
+  box-shadow: none;
 }/*# sourceMappingURL=register.css.map */

@@ -64,24 +64,60 @@
 
 .carousel {
     text-align: center;
+
     .container {
 
-        .row{
-            .col-md-6{
-                .card{
+        .row {
+            .col-md-6 {
+                .card {
                     border: none;
-                    .card-body{
 
-                        h2{
+                    .card-body {
 
-                        }
+                        .card-title {}
 
-                        form{
+                        form {
 
-                            .row{
+                            .row {
 
-                                .col{
-                                    
+                                .col-md-6 {
+                                    .form-label {}
+
+                                    .form-control {
+                                        border-bottom: 2px solid #c445ff;
+
+                                        &:focus {
+                                            outline: none;
+                                            box-shadow: none;
+                                        }
+                                    }
+
+                                    .form-check-inline {
+                                        .form-check-input {}
+
+                                        .form-check-label {}
+                                    }
+                                }
+                            }
+
+                            .text-center {
+                                margin-top: 30px;
+                                button {
+                                    padding: 7px 40px;
+                                    background-color: #c445ff;
+                                    border: none;
+                                    font-size: 18px;
+                                    font-weight: bold;
+                                    color: white;
+                                    transition: background-color 0.3s ease;
+
+                                    &:hover{
+                                        background-color: #a837d4;
+                                    }
+                                    &:focus{
+                                        outline: none;
+                                        box-shadow: none;
+                                    }
                                 }
                             }
                         }

@@ -30,7 +30,7 @@ document.querySelector('#form').addEventListener('submit', async function (e) {
     const khachHangMoi = { email, name, password, phone, gender: genderValue };
 
     if (!kiemTraXacNhanPassword(password, inputConfirmPassword)) {
-        // window.location.href = 'http://127.0.0.1:5500/pages/register.html';
+        window.location.href = 'http://127.0.0.1:5500/pages/register.html';
         return;
     }
     // Kiểm tra dữ liệu nhập vào

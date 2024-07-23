@@ -51,21 +51,19 @@ form {
     padding: 0;
 }
 
-.gender{
+.gender {
     display: flex;
     align-items: center;
     justify-content: space-around;
     text-align: center;
 
-    .form-label{
-        margin: 0;
+    .form-check {
+        .form-check-input {
+
+            &:checked {
+                background-color: #c445ff;
+                color: #fff;
+            }
+        }
     }
 }
-
-// .email{
-//     width: 482px;
-//     height: 51px;
-//     top: 140px;
-//     left: 120px;
-//     // position: absolute;
-// }
