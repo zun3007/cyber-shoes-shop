@@ -1,215 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/assets/css/register.css" />
-  </head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-  <body>
-    <header class="header">
-      <div class="container">
-        <nav class="navbar">
-          <ul class="auth--nav">
-            <li class="logo">
-              <a id="getIndex" href="/"
-                ><img
-                  width="128px"
-                  height="32px"
-                  src="/assets/images/cybersoft.png"
-                  alt="Cybersoft Logo"
-              /></a>
-            </li>
-            <li class="auth">
-              <img src="/assets/images/cart.svg" alt="Cart Icon" />
-              <a href="#">Login</a>
-              <a href="/pages/register.html">Register</a>
-            </li>
-          </ul>
+  <link rel="stylesheet" href="/assets/css/register.css" />
+</head>
 
-          <ul class="pagination">
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">Woman</a></li>
-            <li><a href="#">Kid</a></li>
-            <li><a href="#">Sport</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <ul class="auth--nav">
+          <li class="logo">
+            <a id="getIndex" href="/"><img width="128px" height="32px" src="/assets/images/cybersoft.png"
+                alt="Cybersoft Logo" /></a>
+          </li>
+          <li class="auth">
+            <img src="/assets/images/cart.svg" alt="Cart Icon" />
+            <a href="#">Login</a>
+            <a href="/pages/register.html">Register</a>
+          </li>
+        </ul>
 
-    <section class="carousel">
-      <div class="container mt-5">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="card-title text-center">Register</h2>
-                <form id="form">
-                  <div class="row mb-3">
-                    <!-- Input Email -->
-                    <div class="col-md-6">
-                      <label for="inputEmail" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="inputEmail"
-                        placeholder="Enter email"
-                        required
-                      />
-                    </div>
+        <ul class="pagination">
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="#">Woman</a></li>
+          <li><a href="#">Kid</a></li>
+          <li><a href="#">Sport</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-                    <!-- Input Name -->
-                    <div class="col-md-6">
-                      <label for="inputName" class="form-label"
-                        >Full Name</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="inputName"
-                        placeholder="Enter your full name"
-                        required
-                      />
-                    </div>
+  <section class="carousel">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title text-center">Register</h2>
+              <form id="form">
+                <div class="row mb-3">
+                  <!-- Input Email -->
+                  <div class="col-md-6">
+                    <label for="inputEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" required />
                   </div>
 
-                  <div class="row mb-3">
-                    <!-- Input Password -->
-                    <div class="col-md-6">
-                      <label for="inputPassword" class="form-label"
-                        >Password</label
-                      >
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="inputPassword"
-                        placeholder="Enter password"
-                        required
-                      />
-                    </div>
+                  <!-- Input Name -->
+                  <div class="col-md-6">
+                    <label for="inputName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Enter your full name"
+                      required />
+                  </div>
+                </div>
 
-                    <!-- Input Confirm Password -->
-                    <div class="col-md-6">
-                      <label for="inputConfirmPassword" class="form-label"
-                        >Confirm Password</label
-                      >
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="inputConfirmPassword"
-                        placeholder="Confirm password"
-                        required
-                      />
-                    </div>
+                <div class="row mb-3">
+                  <!-- Input Password -->
+                  <div class="col-md-6">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Enter password"
+                      required />
                   </div>
 
-                  <div class="row mb-3">
-                    <!-- Input Phone Number -->
-                    <div class="col-md-6">
-                      <label for="inputPhone" class="form-label"
-                        >Phone Number</label
-                      >
-                      <input
-                        type="tel"
-                        class="form-control"
-                        id="inputPhone"
-                        placeholder="Enter phone number"
-                        required
-                      />
-                    </div>
+                  <!-- Input Confirm Password -->
+                  <div class="col-md-6">
+                    <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm password"
+                      required />
+                  </div>
+                </div>
 
-                    <!-- Radio Buttons for Gender -->
-                    <div class="col-md-6 gender">
-                      <label class="form-label">Gender</label>
-                      <div>
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="gender"
-                            id="maleRadio"
-                            value="male"
-                            required
-                          />
-                          <label class="form-check-label" for="maleRadio"
-                            >Male</label
-                          >
-                        </div>
-                        <div class="form-check form-check-inline">
-                          <input
-                            class="form-check-input"
-                            type="radio"
-                            name="gender"
-                            id="femaleRadio"
-                            value="female"
-                            required
-                          />
-                          <label class="form-check-label" for="femaleRadio"
-                            >Female</label
-                          >
-                        </div>
+                <div class="row mb-3">
+                  <!-- Input Phone Number -->
+                  <div class="col-md-6">
+                    <label for="inputPhone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="inputPhone" placeholder="Enter phone number" required />
+                  </div>
+
+                  <!-- Radio Buttons for Gender -->
+                  <div class="col-md-6 gender">
+                    <label class="form-label">Gender</label>
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="maleRadio" value="male"
+                          required />
+                        <label class="form-check-label" for="maleRadio">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="femaleRadio" value="female"
+                          required />
+                        <label class="form-check-label" for="femaleRadio">Female</label>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <!-- Submit Button -->
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary">
-                      Register
-                    </button>
-                  </div>
-                </form>
-              </div>
+                <!-- Submit Button -->
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">
+                    Register
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <div class="container mt-5">
-        <img
-          class="footer"
-          width="1280px"
-          src="/assets/images/footer.png"
-          alt="footer.png"
-        />
-      </div>
-    </footer>
+  <footer>
+    <div class="container mt-5">
+      <img class="footer" width="1280px" src="/assets/images/footer.png" alt="footer.png" />
+    </div>
+  </footer>
 
-    <!-- CDN Javacript Section -->
-    <!-- HTMX -->
-    <script
-      src="https://unpkg.com/htmx.org@2.0.0"
-      integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
-      crossorigin="anonymous"
-    ></script>
+  <!-- CDN Javacript Section -->
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@2.0.0"
+    integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+    crossorigin="anonymous"></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 
-    <!-- Axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script type="module" src="/assets/js/register.js"></script>
-  </body>
+  <script type="module" src="/assets/js/register.js"></script>
+</body>
+
 </html>
